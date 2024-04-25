@@ -8,6 +8,10 @@
     font-weight: 500;
 }
 
+.ant-btn-primary {
+    background-color: #1677ff !important;
+}
+
 /* .blink {
     animation: blinker 3s linear infinite;
 }

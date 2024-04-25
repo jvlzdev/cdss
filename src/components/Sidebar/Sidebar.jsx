@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 // import { useRouter } from "next/router";
+import { FaUser } from "react-icons/fa";
 import { SlHome } from "react-icons/sl";
+import { FaHospitalUser } from "react-icons/fa";
 import { BsInfoSquare, BsEnvelopeAt } from "react-icons/bs";
 import { FaTshirt, FaRedhat } from "react-icons/fa";
 // import logo from "@/img/logo.svg";
 import { Link, useLocation } from "react-router-dom";
+import logoImg from '../../assets/logo.png'
 export default function Sidebar({ show, setter }) {
   const router = useLocation();
   // Define our base class
   const className =
-    "bg-black w-[250px] transition-[margin-left] ease-in-out duration-500 fixed md:static top-0 bottom-0 left-0 z-40";
+    "w-[250px] transition-[margin-left] ease-in-out duration-500 fixed md:static top-0 bottom-0 left-0 z-40";
   // Append class based on state of sidebar visiblity
   const appendClass = show ? " ml-0" : " ml-[-250px] md:ml-0";
   // Clickable menu items
@@ -25,7 +28,7 @@ export default function Sidebar({ show, setter }) {
         onClick={() => {
           setter((oldVal) => !oldVal);
         }}
-        className={`flex gap-1 [&>*]:my-auto text-md pl-6 py-3 border-b-[1px] border-b-white/10 ${colorClass}`}
+        className={`flex gap-1 [&>*]:my-auto text-md pl-6 py-6 border-b-[1px] border-b-white/10 ${colorClass}`}
       >
         <div className="text-xl flex [&>*]:mx-auto w-[30px]">{icon}</div>
         <div>{name}</div>
@@ -43,19 +46,12 @@ export default function Sidebar({ show, setter }) {
   );
   return (
     <>
-      <div className={`${className}${appendClass}`}>
-        <div className="p-2 flex">
-          <Link to="/">
-            {/*eslint-disable-next-line*/}
-            <div width={300} height={300} />
-          </Link>
-        </div>
-        <div className="flex flex-col">
-          <MenuItem name="Home" route="/" icon={<SlHome />} />
-          <MenuItem name="T-Shirts" route="/t-shirts" icon={<FaTshirt />} />
-          <MenuItem name="Hats" route="/hats" icon={<FaRedhat />} />
-          <MenuItem name="About Us" route="/about" icon={<BsInfoSquare />} />
-          <MenuItem name="Contact" route="/contact" icon={<BsEnvelopeAt />} />
+      <div style={{ background: '#345673' }} className={`${className}${appendClass}`}>
+      <div style={{ background: '#345673', height: '100px' }}/>
+        <div className="flex-col p-2">
+          <MenuItem name="Dashboard" route="/" icon={<SlHome />} />
+          <MenuItem name="Employees" route="/employees" icon={<FaHospitalUser />} />
+          <MenuItem name="Patients" route="/patients" icon={<FaUser />} />
         </div>
       </div>
       {show ? <ModalOverlay /> : <></>}

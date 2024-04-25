@@ -1,11 +1,57 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // create the api
+// This variable handles request header informations
+const APIHeader = { "content-type": "application/json" };
+// Base URL
+const createRequest = (url) => ({ url, headers: APIHeader });
 
 export const appApi = createApi({
     reducerPath: "appApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
     endpoints: (builder) => ({
+        getEmployees: builder.query({
+            query: () => createRequest('users/employees'),
+            providesTags: ['Employees']
+        }),
+        updateEmployeeById: builder.mutation({
+            query: (user) => ({
+                url: `users/employee/${user.id}`,
+                method: 'PATCH',
+                body: user
+            }),
+            invalidatesTags: ['Employees']
+        }),
+        deleteEmployeeById: builder.mutation({
+            query: ({ id }) => ({
+                url: `/users/employee/${id}`,
+                body: {
+                    id,
+                },
+                method: "DELETE",
+            }),
+            invalidatesTags: ['Employees']
+        }),
+        createEmployee: builder.mutation({
+            query: (user) => ({
+                url: "/users/employee",
+                body: user,
+                method: "POST",
+            }),
+            invalidatesTags: ['Employees']
+        }),
+        getPatients: builder.query({
+            query: () => createRequest('/patients'),
+            providesTags: ['Patients']
+        }),
+        createPatient: builder.mutation({
+            query: (body) => ({
+                url: "/patients",
+                body,
+                method: "POST",
+            }),
+            invalidatesTags: ['Patients']
+        }),
         signup: builder.mutation({
             query: (user) => ({
                 url: "/users/signup",
@@ -93,6 +139,12 @@ export const appApi = createApi({
 });
 
 export const {
+    useGetEmployeesQuery,
+    useUpdateEmployeeByIdMutation,
+    useDeleteEmployeeByIdMutation,
+    useCreateEmployeeMutation,
+    useGetPatientsQuery,
+    useCreatePatientMutation,
     useSignupMutation,
     useLoginMutation,
     useCreateProductMutation,
