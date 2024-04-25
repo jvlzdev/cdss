@@ -192,7 +192,7 @@ function Evaluation() {
 
   const onChangeRadio = (e) => {
     setNewEvaluationData((pre) => {
-      return { ...pre, met1: e.target.value };
+      return { ...pre, [e.target.name]: e.target.value };
     });
   };
 
@@ -236,7 +236,7 @@ function Evaluation() {
                         high acceptability, with her expressing satisfaction.
                       </div>
                       <div>
-                        <Radio.Group onChange={onChangeRadio}>
+                        <Radio.Group name="met1" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -255,7 +255,7 @@ function Evaluation() {
                         healthy products to reduce the risk of diarrhea.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met2" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -273,7 +273,7 @@ function Evaluation() {
                         needs of the patient’s dietary needs.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met3" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -290,7 +290,7 @@ function Evaluation() {
                         exercise, and visualization techniques.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met4" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -312,7 +312,7 @@ function Evaluation() {
                         high acceptability, with her expressing satisfaction.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met5" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -329,7 +329,7 @@ function Evaluation() {
                         high acceptability, with her expressing satisfaction.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met6" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -348,7 +348,7 @@ function Evaluation() {
                         healthy products to reduce the risk of diarrhea.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met7" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -366,7 +366,7 @@ function Evaluation() {
                         needs of the patient’s dietary needs.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met8" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -383,7 +383,7 @@ function Evaluation() {
                         exercise, and visualization techniques.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met9" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -405,7 +405,7 @@ function Evaluation() {
                         high acceptability, with her expressing satisfaction.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met10" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -422,7 +422,7 @@ function Evaluation() {
                         high acceptability, with her expressing satisfaction.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met11" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -441,7 +441,7 @@ function Evaluation() {
                         healthy products to reduce the risk of diarrhea.
                       </div>
                       <div>
-                        <Radio.Group>
+                        <Radio.Group name="met12" onChange={onChangeRadio}>
                           <Radio value={"MET"}>MET</Radio>
                           <Radio value={"UNMET"}>UNMET</Radio>
                         </Radio.Group>
@@ -451,176 +451,378 @@ function Evaluation() {
                 </div>
               </div>
             ) : data?.diagnosis === 2 ? (
-              <div className="grid grid-cols-3 p-4 text-2xl font-extrabold border">
-                <div>
+              <div className="grid grid-cols-3 text-2xl font-extrabold border overflow-y-scroll h-[600px]">
+                <div className="border p-2">
                   (2) Risk for Electrolyte Imbalance related to intense vomiting
                   and diarrhea leading to fluid and electrolyte loss.
                 </div>
-                <div>
-                  <div>
-                    After 1 week of nursing intervention the client will be able
-                    to:
+                <div className="col-span-2">
+                  <div className="text-center border font-bold text-xl p-2">
+                    INDEPENDENT
                   </div>
                   <div>
-                    1. Maintain the serum sodium, calcium, potassium,
-                    phosphorus, magnesium, and pH levels within the normal
-                    range.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The intervention was proven effective by the client’s
+                        willingness to cooperate with Oral Rehydration Therapy
+                        (ORT). It demonstrated efficiency by providing patient
+                        needs of therapy. Adequacy in the intervention is
+                        apparent in addressing ORT to rehydrate the client.
+                        Client shows acceptability to the intervention by
+                        cooperating and acknowledging the therapy.
+                      </div>
+                      <div>
+                        <Radio.Group name="met1" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The intervention to monitor vital signs and symptoms of
+                        shock or worsening dehydration has proven effective in
+                        detecting early signs of fluid volume deficit. By
+                        concentrating on reliable indicators, healthcare workers
+                        can effectively and promptly identify the symptoms of
+                        dehydration. The efficacy of the intervention is
+                        demonstrated by its capacity to identify early
+                        indicators, which meets the requirement of prompt
+                        intervention to avert consequences. The patient
+                        demonstrates acceptability by acknowledging the value of
+                        the structured approach in raising the standard of their
+                        care. The appropriateness of the Intervention is in line
+                        with best practices.
+                      </div>
+                      <div>
+                        <Radio.Group name="met2" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The evaluation indicates the nursing intervention
+                        effectively measures and documents all the intake and
+                        output of the patient. Adequacy is evident because it
+                        addresses the monitoring needs of the patient.
+                      </div>
+                      <div>
+                        <Radio.Group name="met3" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The intervention to assess skin turgor, mucous
+                        membranes, and capillary refill is confirmed effective
+                        by detecting dehydration among adults. It is adequate
+                        because it addresses the need for information about
+                        hydration status. The patient exhibits acceptability by
+                        cooperating during the assessment.
+                      </div>
+                      <div>
+                        <Radio.Group name="met4" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    DEPENDENT
                   </div>
                   <div>
-                    2. Reduce the episodes of diarrhea and vomiting to mitigate
-                    fluid and electrolyte loss.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The evaluation proves the effectiveness of the
+                        intervention in addressing dehydration and electrolyte
+                        imbalances, as well as ensuring appropriate treatment.
+                        It also demonstrates the collaboration with physicians
+                        to initiate IV fluid therapy if oral rehydration is not
+                        successful or tolerated. The relationship functions
+                        effectively, enabling prompt interventions for patients
+                        who cannot handle oral intake. The intervention
+                        demonstrates adequacy when it fully attends to the
+                        requirement for comprehensive management. Feedback
+                        suggests that this method encourages patient
+                        participation in the treatment process and is
+                        well-received by clients and healthcare professionals
+                        alike. Additionally, the interventions compliance with
+                        acceptable medical standards highlights how suitable it
+                        is to treat dehydration and electrolyte imbalances with
+                        IV fluid treatment in conjunction with doctors when oral
+                        rehydration is unsatisfactory or ineffective.
+                      </div>
+                      <div>
+                        <Radio.Group name="met5" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        The evaluation demonstrates that the intervention was
+                        successful on several levels. First, it works well with
+                        healthcare providers to obtain necessary laboratory
+                        tests, such as creatinine, blood urea nitrogen (BUN),
+                        and electrolytes (sodium, potassium, chloride, and
+                        bicarbonate), which ensures accurate assessment of
+                        hydration status and electrolyte balance. The
+                        collaboration functions effectively, enabling prompt
+                        interventions when required. The intervention
+                        demonstrates adequacy when it fully attends to the need
+                        for in-depth evaluation. Feedback suggests that the
+                        strategy is well-received by patients and healthcare
+                        professionals, encouraging participation in the
+                        evaluation procedure. Furthermore, the interventions
+                        appropriateness in meeting hydration and electrolyte
+                        balance needs through laboratory testing together with
+                        physicians is highlighted by its conformance to accepted
+                        medical norms and guidelines.
+                      </div>
+                      <div>
+                        <Radio.Group name="met6" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    COLLABORATIVE
                   </div>
                   <div>
-                    3. Implement a long-term nutritional plan to replenish lost
-                    electrolytes and provide essential nutrients to support
-                    overall health and recovery.
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    After 24 of nursing intervention the client will be able to:
-                  </div>
-                  <div>
-                    1. Note if she is thirsty and less frequent or there is
-                    absence of urination, dry mouth and skin, weakness,
-                    light-headedness, and headaches.
-                  </div>
-                  <div>
-                    2. Monitor the total intake and output that includes stool
-                    output as possible and provides estimation of fluid needs.
-                  </div>
-                  <div>
-                    3. Consume small amounts of food to minimize the risk of
-                    excessive fluid and electrolyte loss.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The evaluation demonstrates that the intervention was successful on several levels. First, it works well with healthcare providers to obtain necessary laboratory tests, such as creatinine, blood urea nitrogen (BUN), and electrolytes (sodium, potassium, chloride, and bicarbonate), which ensures accurate assessment of hydration status and electrolyte balance. The collaboration functions effectively, enabling prompt interventions when required. The intervention demonstrates adequacy when it fully attends to the need for in-depth evaluation. Feedback suggests that the strategy is well-received by patients and healthcare professionals, encouraging participation in the evaluation procedure. Furthermore, the intervention's appropriateness in meeting hydration and electrolyte balance needs through laboratory testing together with physicians is highlighted by its conformance to accepted medical norms and guidelines.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met10" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ) : data?.diagnosis === 3 ? (
-              <div className="grid grid-cols-3 p-4 text-2xl font-extrabold border">
-                <div>
-                  (3) Acute Pain related to gastrointestinal inflammation as
-                  evidenced by the patients self-report of abdominal cramps
-                  rating 7/10 on the pain scale.
+              <div className="grid grid-cols-3 text-2xl font-extrabold border overflow-y-scroll h-[600px]">
+                <div className="border p-2">
+                  (3){" "}
+                  {`Acute Pain related to gastrointestinal inflammation as evidenced by the patient's self-report of abdominal cramps rating 7/10 on the pain scale, distress, and discomfort. `}
                 </div>
-                <div>
-                  <div>
-                    After one week of nursing intervention, the client will be
-                    able to:
+                <div className="col-span-2">
+                  <div className="text-center border font-bold text-xl p-2">
+                    INDEPENDENT
                   </div>
                   <div>
-                    1. Attain complete resolution of abdominal pain through
-                    consistent monitoring of pain relief interventions.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`Consistently assessing pain location, intensity, duration, quality, and aggravating/relieving factors, providing a view of the patient’s pain. Integrating patients' perspectives and experiences makes the assessment process more accurate. Developing specific interventions based on the location, intensity, duration, and quality factors identification of patient pain triggers.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met1" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The evaluation incorporates regular monitoring of vital signs, including blood pressure, heart rate, and respiratory rate, to physiological responses to pain. Consistently tracking crucial signs before and after pain intervention and accurate documentation allows the identification of patterns in vital signs if they are increasing or decreasing from expected findings. `}
+                      </div>
+                      <div>
+                        <Radio.Group name="met2" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The implementation of relaxation techniques for pain relief and anxiety reduction provides non-pharmacological options for pain relief and promotes self-efficacy. Regular assessment of effectiveness ensures personalized pain management and anxiety reduction strategies.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met3" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    DEPENDENT
                   </div>
                   <div>
-                    2. Incorporate recommended lifestyle changes and preventive
-                    measures to reduce the likelihood of recurrent episodes.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`Administering prescribed pain medication has been effectively implemented, improving pain management. The pain in the abdominal area disappeared after the client drank the medicine prescribed by the doctor. Constant monitoring is necessary to ensure continuous improvement of pain relief and anticipate any adverse effects of medication. `}
+                      </div>
+                      <div>
+                        <Radio.Group name="met6" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div>
-                    After 24 hours of nursing intervention, the client will be
-                    able to:
-                  </div>
-                  <div>
-                    1. Experience a decrease in pain intensity from 7/10 to 3/10
-                    through the appropriate administration of prescribed
-                    medication
-                  </div>
-                  <div>
-                    2. Independently perform pain assessments at regular
-                    intervals of 1 to 2 hours.
+                  <div className="text-center border font-bold text-xl p-2">
+                    COLLABORATIVE
                   </div>
                   <div>
-                    3. Demonstrate an understanding of the underlying cause of
-                    gastrointestinal inflammation.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`Collaboration with a dietician to develop a personalized dietary plan addressing food triggers, such as lactose intolerance and gluten sensitivity, has effectively promoted patient-centered care. `}
+                      </div>
+                      <div>
+                        <Radio.Group name="met10" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ) : data?.diagnosis === 4 ? (
-              <div className="grid grid-cols-3 p-4 text-2xl font-extrabold border">
-                <div>
-                  (4) Risk for Imbalanced Nutrition less than body requirements
-                  related to inadequate interest in food due to nausea,
-                  vomiting, and diarrhea.
+              <div className="grid grid-cols-3 text-2xl font-extrabold border overflow-y-scroll h-[600px]">
+                <div className="border p-2">
+                  (4){" "}
+                  {`Risk for Imbalanced Nutrition: Less Than Body Requirements related to nausea, vomiting, and diarrhea as evidenced by decreased oral intake.`}
                 </div>
-                <div>
-                  <div>
-                    After two weeks of nursing intervention, the client will be
-                    able to:
+                <div className="col-span-2">
+                  <div className="text-center border font-bold text-xl p-2">
+                    INDEPENDENT
                   </div>
                   <div>
-                    1. Maintain ideal nutritional status by consuming 100% of
-                    their prescribed daily.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The intervention to assess current weight compared to usual weight and norms for age, gender, and body size was effective because it promotes health and well-veing across various life stages. Adequacy was demonstrated by addressing the needs of the patient to be assessed. The client shows acceptability through cooperating and acknowledging the assessments.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met1" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`Auscultating the presence and character of bowel sounds was effective by evaluating the gastrointestinal function, detecting abnormalities, diagnosing gastrointestinal disorders, and ensuring proper digestion and absorption of nutrients. It’s adequate because it conveys the patient’s ability and readiness of the intestinal tract to handle digestive processes. Acceptability was evident due to the patient's willingness to be assessed. `}
+                      </div>
+                      <div>
+                        <Radio.Group name="met2" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    DEPENDENT
                   </div>
                   <div>
-                    2. caloric intake and following dietary recommendations.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`Administering pharmaceutical agents, as indicated: vitamin and mineral (iron) supplements, digestive drugs or enzymes and medications is effective in addressing specific health issues, managing symptoms, preventing complications, and promoting overall well-being based on individual patient needs and clinical indications. It has demonstrated adequacy due to the ability to address a patient's risk for imbalanced nutrition. Patient satisfaction is evidence that the intervention is acceptable.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met5" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    COLLABORATIVE
                   </div>
                   <div>
-                    3. Demonstrate self-managing abilities in monitoring
-                    nutritional intake.
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    After 48 hours of nursing intervention, the client will be
-                    able to:
-                  </div>
-                  <div>
-                    1. Experience a reduction in the severity of nausea,
-                    vomiting, and diarrhea.
-                  </div>
-                  <div>
-                    2. Show improved tolerance to small, frequent meals without
-                    experiencing nausea, vomiting, and diarrhea.
-                  </div>
-                  <div>
-                    3. Increase fluid intake to at least 2 liters per day to
-                    avoid dehydration.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The evaluation confirms the successful intervention by effectively collaborating with an interdisciplinary team to set nutritional goals. Adequacy is evident as the intervention comprehensively addresses the requirement for thorough evaluation. The alignment with established medical standards and guidelines underscores the appropriateness of the intervention in addressing hydration and electrolyte balance requirements through laboratory testing collaboration with  interdisciplinary teams. The patient shows acceptability by giving feedback to the intervention given.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met10" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ) : data?.diagnosis === 5 ? (
-              <div className="grid grid-cols-3 p-4 text-2xl font-extrabold border">
-                <div>
-                  (5) Activity Intolerance related to fatigue and diarrhea as
-                  evidenced by decreased activity level and reports of feeling
-                  tired.
+              <div className="grid grid-cols-3 text-2xl font-extrabold border overflow-y-scroll h-[600px]">
+                <div className="border p-2">
+                  (5){" "}
+                  {`Activity Intolerance related to fatigue and diarrhea as evidenced by decreased activity level and reports of feeling tired. `}
                 </div>
-                <div>
-                  <div>
-                    After two weeks of nursing intervention, the client will be
-                    able to:
+                <div className="col-span-2">
+                  <div className="text-center border font-bold text-xl p-2">
+                    INDEPENDENT
                   </div>
                   <div>
-                    1. The client can demonstrate techniques and methods to
-                    reduce the activity intolerance.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The intervention that has been given to the client was proven effective because it optimizes training outcomes and ensures overall well-being during exercise. It has demonstrated efficacy by providing the patient with realistic and useful advice. The intervention's adequacy in addressing the dietary components that contribute to diarrhea and fatigue is apparent. Acceptability is apparent through the patient’s acknowledging the assessments and results.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met1" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`This evaluation has proven effective by capturing key aspects of a client's well-being, including physical sensations and challenges in daily functioning. It's important for assessing their overall health and designing appropriate interventions.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met2" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    DEPENDENT
                   </div>
                   <div>
-                    2. The client can participate in any activities that require
-                    small movements.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The intervention to provide and monitor response to supplemental oxygen, medications, and changes in treatment regimen demonstrated effectiveness by the client showing improved oxygen saturation levels and symptom relief. Adequacy was evident in addressing the client's specific needs and condition. Acceptability wad apparent due to the patient’s tolerability and willingness to comply with the regimen.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met5" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center border font-bold text-xl p-2">
+                    COLLABORATIVE
                   </div>
                   <div>
-                    3. The client can demonstrate how to breathe properly when
-                    experiencing difficulty breathing.
-                  </div>
-                </div>
-                <div>
-                  <div>
-                    After 24 hours of nursing intervention, the client will be
-                    able to:
-                  </div>
-                  <div>
-                    1. Have the knowledge about activity intolerance related to
-                    fatigue and diarrhea and what therapy needs for prevention.
-                  </div>
-                  <div>
-                    2. The patient’s cardiopulmonary condition will become
-                    stable in terms of blood pressure and respiratory rate.
-                  </div>
-                  <div>
-                    3. The patient will no longer experience respiratory
-                    distress because of fatigue and diarrhea will no longer
-                    experience.
+                    <div className="p-2 border">
+                      <div className="p-2">
+                        {`The evaluation confirms the effectiveness of the intervention on determining the client’s current activity level and physical condition with observation, exercise-capacity testing, or use of a functional-level classification system.. This collaboration operates efficiently, facilitating timely interventions as needed. Adequacy is demonstrated as the intervention comprehensively addresses the needs of the  aseline assessment, risk stratification, exercise prescription, progress monitoring, safety promotion, and delivering patient-centered care to patient's needs and goals. It is acceptable because of the client's satisfaction with the intervention provided.`}
+                      </div>
+                      <div>
+                        <Radio.Group name="met10" onChange={onChangeRadio}>
+                          <Radio value={"MET"}>MET</Radio>
+                          <Radio value={"UNMET"}>UNMET</Radio>
+                        </Radio.Group>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -631,7 +833,40 @@ function Evaluation() {
 
           <div className="mt-5">
             <div className="text-xl">Flow Chart (CDSS)</div>
-            <div><a target="_blank" rel="noreferrer" className="text-blue-500 underline" href="https://drive.google.com/file/d/1KFTwxbt2KLZ-i7nD_EnU64yifbRa5Wez/view?usp=drive_link">https://drive.google.com/file/d/1KFTwxbt2KLZ-i7nD_EnU64yifbRa5Wez/view?usp=drive_link</a></div>
+            <div>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-500 underline"
+                href={`${
+                  data?.diagnosis === 1
+                    ? "https://drive.google.com/file/d/1KFTwxbt2KLZ-i7nD_EnU64yifbRa5Wez/view?usp=drive_link"
+                    : data?.diagnosis === 2
+                    ? "https://drive.google.com/file/d/1wrYjLp-_5PnRqyEqngbuFRjtnoeal0jf/view?usp=drive_link"
+                    : data?.diagnosis === 3
+                    ? "https://drive.google.com/file/d/1gEyV-n41Ut91Ae6lN34_BVijl2z4bV8H/view?usp=drive_link"
+                    : data?.diagnosis === 4
+                    ? "https://drive.google.com/file/d/1N0cFZwJL04Cq1AfZPK4p63alDarNDyPu/view?usp=drive_link"
+                    : data?.diagnosis === 5
+                    ? "https://drive.google.com/file/d/1wDusC-7mhVKTaNlrnaEAebKZHiMyT2zU/view?usp=drive_link"
+                    : ""
+                }`}
+              >
+                {`${
+                  data?.diagnosis === 1
+                    ? "https://drive.google.com/file/d/1KFTwxbt2KLZ-i7nD_EnU64yifbRa5Wez/view?usp=drive_link"
+                    : data?.diagnosis === 2
+                    ? "https://drive.google.com/file/d/1wrYjLp-_5PnRqyEqngbuFRjtnoeal0jf/view?usp=drive_link"
+                    : data?.diagnosis === 3
+                    ? "https://drive.google.com/file/d/1gEyV-n41Ut91Ae6lN34_BVijl2z4bV8H/view?usp=drive_link"
+                    : data?.diagnosis === 4
+                    ? "https://drive.google.com/file/d/1N0cFZwJL04Cq1AfZPK4p63alDarNDyPu/view?usp=drive_link"
+                    : data?.diagnosis === 5
+                    ? "https://drive.google.com/file/d/1wDusC-7mhVKTaNlrnaEAebKZHiMyT2zU/view?usp=drive_link"
+                    : ""
+                }`}
+              </a>
+            </div>
           </div>
 
           <div className="flex justify-between mt-5">
