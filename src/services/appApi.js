@@ -8,7 +8,7 @@ const createRequest = (url) => ({ url, headers: APIHeader });
 
 export const appApi = createApi({
     reducerPath: "appApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://cdss-backend.onrender.com" }),
     endpoints: (builder) => ({
         getEmployees: builder.query({
             query: () => createRequest('users/employees'),
